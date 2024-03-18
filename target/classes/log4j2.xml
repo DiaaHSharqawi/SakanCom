@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%msg%n}{FATAL=red blink, ERROR=red, WARN=yellow, INFO=green, DEBUG=green}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console">
+                <Filter type="RegexFilter" regex="^\d{2}:\d{2}:\d{2} \w{2} \d{2}, \d{4}" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </AppenderRef>
+        </Root>
+    </Loggers>
+</Configuration>
